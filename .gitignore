@@ -1,0 +1,16 @@
+# Created by .ignore support plugin (hsz.mobi)
+
+# IntelliJ project files
+.idea
+*.iml
+
+# Generated output
+auto-test/target/
+target/
+/lib/
+lib/
+
+# Eclipse project files
+.classpath*
+.project*
+.settings*
