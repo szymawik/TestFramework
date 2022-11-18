@@ -31,7 +31,7 @@ public class ProductsPage extends BasePage {
     }
 
     public void goToSubcategory(String subCategory) {
-        waitForElement(shadowHost);
+//        waitForElement(shadowHost);
         String selector = "";
         switch (subCategory){
             case "Discovery & Translational Research":
@@ -65,10 +65,16 @@ public class ProductsPage extends BasePage {
                 selector = shop;
                 break;
         }
-        WebElement shadowRoot = expandRootElement(shadowHost);
-        WebElement shadowHost2 = shadowRoot.findElement(By.tagName("qia-navigation-flyout"));
-        WebElement shadowRoot2 = expandRootElement(shadowHost2);
-        WebElement element = shadowRoot2.findElement(By.cssSelector(selector));
+//        WebElement shadowRoot = expandRootElement(shadowHost);
+//        WebElement shadowHost2 = shadowRoot.findElement(By.tagName("qia-navigation-flyout"));
+//        WebElement shadowRoot2 = expandRootElement(shadowHost2);
+//        WebElement element = shadowRoot2.findElement(By.cssSelector(selector));
+        WebElement element = driver.findElement(By.cssSelector(selector));
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         element.click();
     }
 }

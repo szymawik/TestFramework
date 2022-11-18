@@ -29,7 +29,7 @@ public class TopMenuPage extends BasePage {
     }
 
     public void openCategory(String category) {
-        waitForElement(shadowHost);
+//        waitForElement(shadowHost);
         String selector = "";
         switch (category){
             case "Products":
@@ -54,8 +54,9 @@ public class TopMenuPage extends BasePage {
                 selector = cart;
                 break;
         }
-        WebElement shadowRoot = expandRootElement(shadowHost);
-        WebElement element = shadowRoot.findElement(By.cssSelector(selector));
+//        WebElement shadowRoot = expandRootElement(shadowHost);
+//        WebElement element = shadowRoot.findElement(By.cssSelector(selector));
+        WebElement element = driver.findElement(By.cssSelector(selector));
         element.click();
     }
 }
