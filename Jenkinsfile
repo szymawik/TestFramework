@@ -17,5 +17,11 @@ pipeline {
                 echo 'Deploying....'
             }
         }
+        post{
+        always{
+        archiveArtifacts artifacts:"target/**/*", fingerprint: true
+        cucumber"target/*.json"
+        }
+        }
     }
 }
