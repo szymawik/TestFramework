@@ -11,17 +11,18 @@ pipeline {
             steps {
                 bat 'mvn clean verify -Dtest=Runner'
             }
+            post{
+                    always{
+                    archiveArtifacts artifacts:"target/**/*", fingerprint: true
+                    cucumber"target/*.json"
+                    }
+                    }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
             }
         }
-        post{
-        always{
-        archiveArtifacts artifacts:"target/**/*", fingerprint: true
-        cucumber"target/*.json"
-        }
-        }
+
     }
 }
