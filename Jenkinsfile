@@ -9,8 +9,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo "PATH = ${PATH}"
-                                    echo "M2_HOME = ${M2_HOME}"
+                bat 'mvn test'
             }
         }
         stage('Deploy') {
