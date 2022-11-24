@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                bat 'mvn test -Dcucumber.options=src/test/java/runner/Runner.java'
+                bat 'mvn clean verify -Dtest=Runner'
             }
         }
         stage('Deploy') {
