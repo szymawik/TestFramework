@@ -10,6 +10,9 @@ agent any
         stage('Test') {
             steps {
                 bat 'mvn clean verify -Dtest=Runner'
+                publishers {
+                                                                allure (['target/allure-results']) {}
+                                                            }
             }
             post{
                     always{
@@ -21,9 +24,7 @@ agent any
         }
         stage('Test2') {
             steps {
-            publishers {
-                                                allure (['target/allure-results']) {}
-                                            }
+
 
                 echo 'Deploying....'
             }
