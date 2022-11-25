@@ -14,7 +14,7 @@ pipeline {
             post{
                     always{
                     archiveArtifacts artifacts:"target/**/*", fingerprint: true
-                    cucumber"target/*.json"
+                    cucumber"**/*.json"
                     }
                     }
         }
