@@ -10,19 +10,15 @@ agent any
         stage('Test') {
             steps {
                 bat 'mvn clean verify -Dtest=Runner'
-
-            }
-            stage('Rapport Allure') {
-                    steps {
-                            allure([
+allure([
                                     includeProperties: false,
                                     jdk: '',
                                     properties: [],
                                     reportBuildPolicy: 'ALWAYS',
                                     results: [[path: 'allure-results']]
                             ])
-                    }
-                }
+            }
+
 
 //             publishers {
 //                         allure (['target/allure-results']) {}
