@@ -27,7 +27,7 @@ agent any
                                             jdk: '',
                                             properties: [],
                                             reportBuildPolicy: 'ALWAYS',
-                                            results: [[path: 'allure-results']]
+                                            results: [[path: 'target/allure-results']]
                                     ])
                     archiveArtifacts artifacts:"target/**/*", fingerprint: true
                     cucumber"target/cucumber/*.json"
