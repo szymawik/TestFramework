@@ -1,7 +1,7 @@
 def nodeNameValue = 'any'
 
 pipeline {
-    agent {label nodeNameValue}
+    agent {nodeNameValue}
 
     stages {
         stage('Build') {
