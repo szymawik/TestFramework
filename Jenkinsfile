@@ -21,6 +21,14 @@ agent any
             post{
 
                     always{
+                    echo 'shit3'
+                    allure([
+                                            includeProperties: false,
+                                            jdk: '',
+                                            properties: [],
+                                            reportBuildPolicy: 'ALWAYS',
+                                            results: [[path: 'allure-results']]
+                                    ])
                     archiveArtifacts artifacts:"target/**/*", fingerprint: true
                     cucumber"target/cucumber/*.json"
                     }
