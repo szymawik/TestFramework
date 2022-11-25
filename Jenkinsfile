@@ -10,13 +10,7 @@ agent any
         stage('Test') {
             steps {
                 bat 'mvn clean verify -Dtest=Runner'
-allure([
-                                    includeProperties: false,
-                                    jdk: '',
-                                    properties: [],
-                                    reportBuildPolicy: 'ALWAYS',
-                                    results: [[path: 'allure-results']]
-                            ])
+                echo 'shit'
             }
 
 
