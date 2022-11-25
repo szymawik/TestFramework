@@ -12,11 +12,11 @@ agent any
                 bat 'mvn clean verify -Dtest=Runner'
 
             }
-            steps{
+
             publishers {
                         allure (['target/allure-results']) {}
                     }
-                    }
+
             post{
 
                     always{
