@@ -10,11 +10,12 @@ agent any
         stage('Test') {
             steps {
                 bat 'mvn clean verify -Dtest=Runner'
-                publishers {
-                                                                allure (['target/allure-results']) {}
-                                                            }
+
             }
             post{
+            publishers {
+                                                                            allure (['target/allure-results']) {}
+                                                                        }
                     always{
                     archiveArtifacts artifacts:"target/**/*", fingerprint: true
                     cucumber"target/cucumber/*.json"
