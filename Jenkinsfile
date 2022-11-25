@@ -12,6 +12,17 @@ agent any
                 bat 'mvn clean verify -Dtest=Runner'
 
             }
+            stage('Rapport Allure') {
+                    script {
+                            allure([
+                                    includeProperties: false,
+                                    jdk: '',
+                                    properties: [],
+                                    reportBuildPolicy: 'ALWAYS',
+                                    results: [[path: 'allure-results']]
+                            ])
+                    }
+                }
 
 //             publishers {
 //                         allure (['target/allure-results']) {}
