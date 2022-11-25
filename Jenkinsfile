@@ -14,7 +14,7 @@ agent any
             post{
                     always{
                     archiveArtifacts artifacts:"target/**/*", fingerprint: true
-                    cucumber"cucumber/*.json"
+                    cucumber"target/cucumber/*.json"
                     }
                     }
 
