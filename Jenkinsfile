@@ -13,9 +13,7 @@ agent any
 
             }
             post{
-            publishers {
-                                                                            allure (['target/allure-results']) {}
-                                                                        }
+
                     always{
                     archiveArtifacts artifacts:"target/**/*", fingerprint: true
                     cucumber"target/cucumber/*.json"
