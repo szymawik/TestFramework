@@ -19,7 +19,7 @@ agent any
                     }
 
         }
-        stage('Deploy') {
+        stage('Test2') {
             steps {
             publishers {
                                                 allure (['target/allure-results']) {}
