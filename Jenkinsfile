@@ -13,9 +13,9 @@ agent any
 
             }
 
-            publishers {
-                        allure (['target/allure-results']) {}
-                    }
+//             publishers {
+//                         allure (['target/allure-results']) {}
+//                     }
 
             post{
 
