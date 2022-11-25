@@ -1,4 +1,4 @@
-def nodeNameValue = 'Test node'
+def nodeNameValue = 'any'
 
 pipeline {
     agent {label nodeNameValue}
