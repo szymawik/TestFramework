@@ -17,6 +17,9 @@ agent any
                     cucumber"**/*.json"
                     }
                     }
+            publishers {
+                        allure (['target/allure-results']) {}
+                    }
         }
         stage('Deploy') {
             steps {
