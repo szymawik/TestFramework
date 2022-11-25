@@ -13,7 +13,7 @@ agent any
 
             }
             stage('Rapport Allure') {
-                    script {
+                    steps {
                             allure([
                                     includeProperties: false,
                                     jdk: '',
