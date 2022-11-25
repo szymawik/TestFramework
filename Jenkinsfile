@@ -10,7 +10,7 @@ agent any
         stage('Test') {
             steps {
                 bat 'mvn clean verify -Dtest=Runner'
-                echo 'shit'
+                echo 'shit'//nie generuje sie bo tu jest failure bo failują testy
             }
 
 
